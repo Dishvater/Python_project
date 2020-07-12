@@ -18,7 +18,10 @@ from django.urls import path
 
 from smate.views import main_site_template
 
+from smate.views import PostCreateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('smate/', main_site_template)
+    path('smate/', main_site_template),
+    path('user/add/', PostCreateView.as_view())
 ]
