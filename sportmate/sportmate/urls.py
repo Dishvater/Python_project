@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from smate.views import main_site_template
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('smate/', main_site_template)
 ]
