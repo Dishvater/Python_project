@@ -3,8 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import CreateView
 
-from sportmate.smate.forms import UserForm
-from sportmate.smate.models import User
+from smate.forms import UserForm
+from smate.models import User
 
 
 def main_site_template(request):
