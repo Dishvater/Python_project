@@ -22,66 +22,27 @@
   <body>
 
     <header>
-
-      <!-- MENU -->
-
-
-
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <a class="navbar-brand" href="../../">SportsMate</a>
-          <form class="form-horizontal" id="loginForm" role="form" method="POST" action="{% url 'login' %}">
-        <div class="row">
-<!--            <div class="col-md-3"></div>-->
-<!--            <div class="col-md-6">-->
-                <h2>Zaloguj się</h2>
-                <hr>
+        <div class="login-layout">
+            <h1>Smate</h1>
+        <h2>Login</h2>
+        <form method="post" class="inline-form">
+          {% csrf_token %}
+          {{ form.as_p }}
+<!--            <div class="form-group">-->
+              <input type="text" placeholder="username" class="form">
 <!--            </div>-->
-        </div>
-        <div class="row">
-<!--            <div class="col-md-3"></div>-->
-<!--            <div class="col-md-6">-->
-                <!-- Wyświetlenie formularza -->
-                {% csrf_token %}
-                {{ form.as_p }}
+<!--            <div class="form-group">-->
+              <input type="text" placeholder="password" class="form">
 <!--            </div>-->
-        </div>
-        <div class="row">
-<!--            <div class="col-md-3"></div>-->
-<!--            <div class="col-md-6">-->
-                <button type="submit" class="btn btn-success" form="loginForm">Zaloguj się</button>
-<!--            </div>-->
-        </div>
-    </form>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-
-          <ul class="navbar-nav mr-auto">
-
-            <!-- Niezalogowany użytkownik -->
+        </form>
             {% if not user.is_authenticated %}
-
-
-
-            <li class="nav-item">
-
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" class="btn btn-success">Sign up</button>
-            </li>
-
-<!--            <li class="nav-item">-->
-<!--              <a class="nav-link" href="{% url 'login' %}">Zaloguj się</a>-->
-<!--            </li>-->
-
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">Utwórz konto</a>
-            </li>
+                <a class="nav-link" href="{% url 'signup' %}"><button type="submit" class="btn btn-success">Sign up</button></a>
             {% else %}
             <!-- Zalogowany użytkownik -->
-            <li class="nav-item">
+<!--            <li class="nav-item">-->
               <a class="nav-link" href="{% url 'panel' %}">Panel</a>
-            </li>
+<!--            </li>-->
 
 
 
@@ -93,15 +54,8 @@
               <a class="nav-link" href="{% url 'logout' %}">Wyloguj się</a>
             </li>
             {% endif %}
-
-          </ul>
-        </div>
-          <div class="mt-2 mt-md-0 site-title">
-
-              <!-- Etykieta strony -->
-
-              {% block site_title %}
-              {% endblock %}
+<!--            {% block site_title %}-->
+<!--            {% endblock %}-->
               <div>
 
                 <button><img src="{% static 'icons/iconfinder_Ball_football_sport_soccer_game_1_4843027.png' %}" height="42" width="42"></button>
@@ -110,7 +64,145 @@
                 <button><img src="{% static 'icons/iconfinder_Ball_sport_volleyball_game_beach_4843010.png' %}" height="42" width="42"></button>
                 <button><img src="{% static 'icons/iconfinder_billiard_pool_sport_game_ball_4843016.png' %}" height="42" width="42"></button>
               </div>
-          </div>
+        </div>
+      <!-- MENU -->
+<!--    <div class="collapse navbar-collapse" id="navbarsExampleDefault">-->
+<!--        <ul class="navbar-nav mr-auto">-->
+<!--          <li class="nav-item active">-->
+<!--            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Link</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link disabled" href="#">Disabled</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
+<!--            <div class="dropdown-menu" aria-labelledby="dropdown01">-->
+<!--              <a class="dropdown-item" href="#">Action</a>-->
+<!--              <a class="dropdown-item" href="#">Another action</a>-->
+<!--              <a class="dropdown-item" href="#">Something else here</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--        <form class="form-inline my-2 my-lg-0">-->
+<!--          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
+<!--          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--        </form>-->
+<!--      </div>-->
+<!--    <div class="jumbotron">-->
+<!--        <div class="container">-->
+
+<!--          <nav class="navbar navbar-inverse navbar-fixed-top">-->
+<!--            <a class="navbar-brand" href="../../">SportsMate</a>-->
+<!--              <div class="navbar-header">-->
+<!--                  <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar" aria-axpanded="false" aria-controls="navbar">-->
+<!--                    <span class="sr-only">Toggle navigation</span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                  </button>-->
+<!--&lt;!&ndash;                  <a class="navbar-brand" href="#">Project name</a>&ndash;&gt;-->
+<!--              </div>-->
+<!--              <div id="navbar" class="navbar-collapse collapse">-->
+<!--                  <form class="navbar-form">-->
+<!--                      <div class="form-group">-->
+<!--                          <input type="text" placeholder="username" class="form-control">-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                          <input type="text" placeholder="password" class="form-control">-->
+<!--                      </div>-->
+<!--                      <button type="submit" class="btn btn-success">Sign in</button>-->
+<!--                  </form>-->
+<!--              </div>-->
+<!--          </nav>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--          <form class="form-horizontal" id="loginForm" role="form" method="POST" action="{% url 'login' %}">-->
+<!--        <div class="row">-->
+<!--&lt;!&ndash;            <div class="col-md-3"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col-md-6">&ndash;&gt;-->
+<!--                <h2>Zaloguj się</h2>-->
+<!--                <hr>-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--&lt;!&ndash;            <div class="col-md-3"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col-md-6">&ndash;&gt;-->
+<!--                &lt;!&ndash; Wyświetlenie formularza &ndash;&gt;-->
+<!--                {% csrf_token %}-->
+<!--                {{ form.as_p }}-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--&lt;!&ndash;            <div class="col-md-3"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col-md-6">&ndash;&gt;-->
+<!--                <button type="submit" class="btn btn-success" form="loginForm">Zaloguj się</button>-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </form>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--          <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarCollapse">-->
+
+<!--          <ul class="navbar-nav mr-auto">-->
+
+            <!-- Niezalogowany użytkownik -->
+<!--            {% if not user.is_authenticated %}-->
+
+
+
+<!--            <li class="nav-item">-->
+
+<!--                <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--                <button type="submit" class="btn btn-success">Sign up</button>-->
+<!--            </li>-->
+
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="{% url 'login' %}">Zaloguj się</a>-->
+<!--            </li>-->
+
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="{% url 'signup' %}">Utwórz konto</a>-->
+<!--            </li>-->
+<!--            {% else %}-->
+<!--            &lt;!&ndash; Zalogowany użytkownik &ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="nav-item">&ndash;&gt;-->
+<!--              <a class="nav-link" href="{% url 'panel' %}">Panel</a>-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+
+
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="{% url 'settings' %}">Ustawienia</a>-->
+<!--            </li>-->
+
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="{% url 'logout' %}">Wyloguj się</a>-->
+<!--            </li>-->
+<!--            {% endif %}-->
+
+<!--          </ul>-->
+<!--        </div>-->
+<!--          <div class="mt-2 mt-md-0 site-title">-->
+
+<!--              &lt;!&ndash; Etykieta strony &ndash;&gt;-->
+
+<!--              {% block site_titl %}-->
+<!--              {% endblock %}-->
+<!--              <div>-->
+
+<!--                <button><img src="{% static 'icons/iconfinder_Ball_football_sport_soccer_game_1_4843027.png' %}" height="42" width="42"></button>-->
+<!--                <button><img src="{% static 'icons/iconfinder_Ball_basketball_sports_game_play_4843006.png' %}" height="42" width="42"></button>-->
+<!--                <button><img src="{% static 'icons/iconfinder_Ball_game_sports_table_tennis_4843044.png' %}" height="42" width="42"></button>-->
+<!--                <button><img src="{% static 'icons/iconfinder_Ball_sport_volleyball_game_beach_4843010.png' %}" height="42" width="42"></button>-->
+<!--                <button><img src="{% static 'icons/iconfinder_billiard_pool_sport_game_ball_4843016.png' %}" height="42" width="42"></button>-->
+<!--              </div>-->
+<!--          </div>-->
     </header>
 
 
