@@ -1,0 +1,146 @@
+ {% load static %}
+
+<!doctype html>
+
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Robert Kalinowski, Wojtek Wawrzyniak">
+
+    <title>
+        SportsMate
+    </title>
+
+    <!-- Plik CSS - Bootstrap -->
+    <link href="{% static 'css/dependencies/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Plik CSS - Aplikacja -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+      <!-- MENU -->
+
+
+
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">SportsMate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+
+            <!-- Niezalogowany użytkownik -->
+            {% if not user.is_authenticated %}
+
+            <li class="nav-item">
+                 <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Sign up</button>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Zaloguj się</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Utwórz konto</a>
+            </li>
+            {% else %}
+            <!-- Zalogowany użytkownik -->
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'panel' %}">Panel</a>
+            </li>
+
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'settings' %}">Ustawienia</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Wyloguj się</a>
+            </li>
+            {% endif %}
+
+          </ul>
+            <div class="mt-2 mt-md-0 site-title"></div>
+
+              <!-- Etykieta strony -->
+
+              {% block site_title %}
+              {% endblock %}
+              <div>
+
+                <button><img src="{% static 'icons/iconfinder_Ball_football_sport_soccer_game_1_4843027.png' %}" height="42" width="42"></button>
+                <button><img src="{% static 'icons/iconfinder_Ball_basketball_sports_game_play_4843006.png' %}" height="42" width="42"></button>
+                <button><img src="{% static 'icons/iconfinder_Ball_game_sports_table_tennis_4843044.png' %}" height="42" width="42"></button>
+                <button><img src="{% static 'icons/iconfinder_Ball_sport_volleyball_game_beach_4843010.png' %}" height="42" width="42"></button>
+                <button><img src="{% static 'icons/iconfinder_billiard_pool_sport_game_ball_4843016.png' %}" height="42" width="42"></button>
+            </div>
+    </header>
+
+
+    <main role="main" class="container">
+
+      <!-- Zawartość strony -->
+
+      <div class="row">
+        <div class="col-sm-12 text-center messages">
+
+            <!-- Powiadomienia -->
+
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ message }}
+                    </div>
+                    {% else %}
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+        </div>
+
+      </div>
+
+
+        <!-- Zawartość strony -->
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">SportsMate</span>
+          <span class="text-muted">Kontakt</span>
+      </div>
+
+    </footer>
+
+
+    <!-- Plik JS - jQuery -->
+    <script src="{% static 'js/dependencies/jquery-3.3.1.slim.min.js' %}"></script>
+
+    <!-- Plik JS - Popper -->
+    <script src="{% static 'js/dependencies/popper.min.js' %}"></script>
+
+    <!-- Plik JS - Bootstrap -->
+    <script src="{% static 'js/dependencies/bootstrap.min.js' %}"></script>
+
+    <!-- Plik JS - Aplikacja -->
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>

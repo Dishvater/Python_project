@@ -1,7 +1,7 @@
 """sportmate URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,14 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from smate.views import main_site_template
-
-from smate.views import PostCreateView
+from . import views
 
 urlpatterns = [
+    path('', views.home, name='home'),
+    path('panel/', views.panel, name='panel'),
     path('admin/', admin.site.urls),
-    path('smate/', main_site_template),
-    path('user/add/', PostCreateView.as_view())
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    # path('surveys/', include('surveys.urls')),
+    # path('notifications', include('notifications.urls'))
 ]
