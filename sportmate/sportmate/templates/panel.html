@@ -9,7 +9,9 @@
 {% block content %}
     <hr>
     <div>
-        <button href="/addevent/">Dodaj wydarzenie</button>
+        <a href="{% url 'addevent' %}"><button>Dodaj wydarzenie</button></a>
+<!--        <a href="/addevent/"><button>Dodaj wydarzenie</button></a>-->
+<!--        <button onclick="location.href=/addevent/">Dodaj wydarzenie</button>-->
     </div>
     <div class="row">
         <p><h4>Moje wydarzenia:</h4></p>
