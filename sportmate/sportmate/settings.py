@@ -124,5 +124,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (BASE_DIR, 'sportmate/static/')
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/panel/'
+LOGIN_REDIRECT_URL = '/panel'
 LOGOUT_REDIRECT_URL = '/'
