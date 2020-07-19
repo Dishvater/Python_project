@@ -7,23 +7,18 @@
 {% endblock %}
     <!-- Zawartość strony -->
 {% block content %}
+    <hr>
+    <div>
+        <a href="{% url 'addevent' %}"><button>Dodaj wydarzenie</button></a>
+<!--        <a href="/addevent/"><button>Dodaj wydarzenie</button></a>-->
+<!--        <button onclick="location.href=/addevent/">Dodaj wydarzenie</button>-->
+    </div>
     <div class="row">
-        <div class="col-sm-12">
-            <p>
-                <h2>
-                    Witaj
-                    <!-- Użytkownik -->
-                    !
-                    <br />
-                </h2>
-                <h4>
-                    <small>
-                        <em>
-                            Wybierz jedną z powyższych opcji w MENU.
-                        </em>
-                    </small>
-                </h4>
-            </p>
-        </div>
+        <p><h4>Moje wydarzenia:</h4></p>
+        {% for event in
+    </div>
+    <hr>
+    <div class="row">
+        <p><h4>wydarzenia zapisane:</h4></p>
     </div>
 {% endblock %}

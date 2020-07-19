@@ -58,6 +58,10 @@ form .helptext{
     justify-content: space-between;
 }
 
+.img-button:active{
+    filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(100deg) saturate(200%);
+}
+
 .middle-login-group{
     display: flex;
     flex-direction: row;
