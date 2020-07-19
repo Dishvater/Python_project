@@ -9,10 +9,15 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import update_session_auth_hash
 
 
+def add_event(request):
+    return render(request, 'addevent.html')
+
+
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
+
 
 @login_required
 def settings(request):
@@ -22,6 +27,7 @@ def settings(request):
     kwargs['password_change_form'] = forms.UserPasswordChangeForm(prefix='password_change_form')
 
     return render(request, 'settings.html', kwargs)
+
 
 @login_required
 def change_basic_data(request):
@@ -35,6 +41,7 @@ def change_basic_data(request):
         else:
             messages.error(request, "Formularz został wypełniony nieprawidłowo.")
     return HttpResponseRedirect(reverse('settings'))
+
 
 @login_required
 def change_password(request):
