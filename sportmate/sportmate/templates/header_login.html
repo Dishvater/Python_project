@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %} {% load static %}
+
+{% block inline-login %}
+<form method="post" class="inline-form">
+  {% csrf_token %}
+  {{ form.as_p }}
+      <input type="text" placeholder="username" class="form">
+      <input type="text" placeholder="password" class="form">
+</form>
+    <a class="nav-link"><button type="submit" class="btn btn-primary">Submit</button></a>
+    <a class="nav-link" href="{% url 'signup' %}"><button type="submit" class="btn btn-success">Sign up</button></a>
+
+{% endblock %}
