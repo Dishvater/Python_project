@@ -10,6 +10,10 @@ from smate.models import User, Event
 def main_site_template(request):
     return render(request, "index.html", {})
 
+def my_events(request):
+    event = Event.objects.get(pk = event_id)
+    return render(request, "panel.html", {'event': event})
+
 
 def Add_event(request):
     form = EventForm(request.POST or None)
@@ -32,4 +36,4 @@ class AddEventView(CreateView):
     model = Event
     form_class = EventForm
     success_url = "panel"
-    template_name = "addevent"
+    template_name = "addevent.html"

@@ -24,6 +24,7 @@
     <header>
         <div class="login-layout">
             <h1><a href="../../">SMate</a></h1>
+        {% block main-header %}
         {% if not user.is_authenticated %}
 <!--        <h2>Login</h2>-->
             <div class="middle-login-group">
@@ -61,6 +62,7 @@
               <a class="nav-link" href="{% url 'logout' %}">Wyloguj się</a>
 <!--            </li>-->
         {% endif %}
+        {% endblock %}
               <div>
 
                 <a><img class="img-button" src="{% static 'icons/iconfinder_Ball_football_sport_soccer_game_1_4843027.png' %}" height="42" width="42"></a>
