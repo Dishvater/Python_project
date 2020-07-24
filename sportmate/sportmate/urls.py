@@ -16,13 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from smate.views import AddEventView
+from smate.views import AddEventView, PanelView, EventViewSet
 from . import views
+from rest_framework import routers
 
+# router = routers.DefaultRouter()
+# router.register('panel', EventViewSet)
 
 urlpatterns = [
+    # path('', include(router.urls)),
     path('', views.home, name='home'),
-    path('panel/', views.panel, name='panel'),
+    # path('panel/', views.panel, name='panel'),
+    path('panel/', PanelView.as_view(), name='panel'),
     path('addevent/', AddEventView.as_view(), name='addevent'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
