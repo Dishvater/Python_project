@@ -4,8 +4,20 @@ html {
   position: relative;
   min-height: 100%;
 }
+
+header {
+    padding: 20px;
+    background-color: #e0e0eb;
+}
+
+header a {
+    color: black;
+}
+
 body {
-  margin-bottom: 70px;
+  margin-bottom: 70px
+  margin-top: 70px
+
 }
 .footer {
   position: absolute;
@@ -56,6 +68,32 @@ form .helptext{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+tr:nth-child(even) {
+  background-color: green;
+}
+
+tr {
+    border-bottom: 3px dotted black;
+}
+
+th, td {
+    width: 150px;
+}
+
+button {
+    background-color: #b3e0ff;
+    border-radius: 6px;
+}
+
+table td + td {
+    border-left:2px solid black;
+}
+
+table {
+    border-collapse:separate;
+    border-spacing:0 15px;
 }
 
 .img-button:active{

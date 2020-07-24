@@ -1,17 +1,24 @@
 from django.shortcuts import render
 
 # Create your views here.
+from django.views import View
 from django.views.generic import CreateView
 
 from smate.forms import UserForm, EventForm
 from smate.models import User, Event
+from rest_framework import viewsets
+
+from smate.serializers import EventSerializer
 
 
 def main_site_template(request):
     return render(request, "index.html", {})
 
+
 def my_events(request):
-    event = Event.objects.get(pk = event_id)
+    # event = Event.objects.get(pk=event_id)
+    # event = Event.objects.all()
+    event = "i ch..."
     return render(request, "panel.html", {'event': event})
 
 
@@ -22,7 +29,21 @@ def Add_event(request):
     context = {
         'form': form
     }
-    return render(request, "/addevent.html", context)
+    return render(request, "addevent", context)
+
+
+class PanelView(View):
+
+    event = Event.objects.all()
+    def get(self, request):
+
+        # return render(request, "panel.html")
+        return render(request, 'panel.html', {'event': self.event})
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    serializer_class = EventSerializer
+    queryset = Event.objects.all()
 
 
 class PostCreateView(CreateView):

@@ -17,8 +17,19 @@ class User(models.Model):
 
 
 class Event(models.Model):
-    what = models.CharField(max_length=128, null=False, blank=False)
-    where = models.CharField(max_length=128, null=False, blank=False)
-    when = models.DateTimeField(max_length=10, null=False, blank=False)
+    LEVEL = (
+        (1, "1"),
+        (2, "2"),
+        (3, "3"),
+        (4, "4"),
+        (5, "5"),
+
+    )
+    what = models.CharField(max_length=128)
+    where = models.CharField(max_length=128)
+    when = models.DateTimeField(null=False, blank=False)
     minmaxcurrent = models.CharField(max_length=128)
-    explevel = models.IntegerField(default=1)
+    explevel = models.IntegerField(choices=LEVEL, default=1)
+
+    def __str__(self):
+        return self.what
