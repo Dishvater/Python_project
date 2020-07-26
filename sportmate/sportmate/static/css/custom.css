@@ -87,6 +87,28 @@ button {
     border-radius: 6px;
 }
 
+.event-row {
+    background-color: green;
+}
+
+.events-list {
+    height: 30px;
+}
+
+.events-list-background:nth-child(even) {
+    background-color: #e6ffe6
+}
+
+.del-event {
+    background-color: #cc0000;
+    border-radius: 6px;
+}
+
+.sign-event {
+    background-color: #e6ffe6;
+    border-radius: 6px;
+}
+
 table td + td {
     border-left:2px solid black;
 }

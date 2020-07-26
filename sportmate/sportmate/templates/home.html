@@ -1,28 +1,32 @@
 {% extends 'core/base.html' %}
     <!-- Etykieta strony -->
 {% block site_title %}
-    <h4>
-        Strona główna
-    </h4>
 {% endblock %}
 
     <!-- Zawartość strony -->
 {% block content %}
-    <div class="row">
-        <div class="col-sm-12">
-            <p>
-                <h2>
-                    Witaj w serwisie!
-                    <br />
-                </h2>
-                <h4>
-                    <small>
-                        <em>
-                            Zaloguj się lub utwórz nowe konto, aby przejść dalej.
-                        </em>
-                    </small>
-                </h4>
-            </p>
-        </div>
+    <div>
+        {% if not user.is_authenticated %}
+
+            <div class="row">
+                <p><h4>Aktualne wydarzenia:</h4></p>
+            </div>
+            <div>
+                <p><h5> what | Where | When | Exp. level</h5></p>
+            </div>
+            <hr>
+            <div style="float: left;">
+                    <div>
+                    {% for event in event %}
+                        <p class="events-list events-list-background">{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }} </p>
+                    {% endfor %}
+                    </div>
+            </div>
+<!--            <div>-->
+<!--                {% for event in event %}-->
+<!--                    <p class="events-list"><a><button class="sign-event">Zapisz się</button></a></p>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+        {% endif %}
     </div>
 {% endblock %}
