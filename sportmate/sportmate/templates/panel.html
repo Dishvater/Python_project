@@ -17,23 +17,27 @@
         <p><h4>Moje wydarzenia:</h4></p>
     </div>
     <div>
-        <table>
-            <tr>
-                <th>What</th>
-                <th>Where</th>
-                <th>When</th>
-                <th>Exp. level</th>
-            </tr>
-        {% for event in event %}
+        <p><h5> what | Where | When | Exp. level</h5></p>
+    </div>
+    <div style="float: left;">
+            <div>
+            {% for event in event %}
 <!--            <p>{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }}</p>-->
-            <tr>
-                <td>{{ event.what }}</td>
-                <td>{{ event.where }}</td>
-                <td>{{ event.when }}</td>
-                <td>{{ event.explevel }}</td>
-            </tr>
+<!--                <tr>-->
+<!--                    <td>{{ event.what }}</td>-->
+<!--                    <td>{{ event.where }}</td>-->
+<!--                    <td>{{ event.when }}</td>-->
+<!--                    <td>{{ event.explevel }}</td>-->
+<!--                    <td><a><button class="del-event">Usuń wydarzenie</button></a></td>-->
+<!--                </tr>-->
+                <p class="events-list events-list-background">{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }} </p>
+            {% endfor %}
+            </div>
+    </div>
+    <div>
+        {% for event in event %}
+            <p class="events-list"><a><button class="del-event">Usuń wydarzenie</button></a></p>
         {% endfor %}
-        </table>
     </div>
 
     <hr>
