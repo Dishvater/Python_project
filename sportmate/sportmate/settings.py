@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "smate",
+    "bootstrap3",
     "rest_framework",
 ]
 

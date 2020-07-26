@@ -21,7 +21,7 @@
     </div>
     <div style="float: left;">
             <div>
-            {% for event in event %}
+            {% for event in events %}
 <!--            <p>{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }}</p>-->
 <!--                <tr>-->
 <!--                    <td>{{ event.what }}</td>-->
@@ -35,9 +35,14 @@
             </div>
     </div>
     <div>
-        {% for event in event %}
-            <p class="events-list"><a><button class="del-event">Usuń wydarzenie</button></a></p>
-        {% endfor %}
+        {% if user.is_authenticated %}
+            {% for event in event %}
+                <p class="events-list"><a><button class="sign-event">Zapisz się</button></a></p>
+            {% endfor %}
+        {% endif %}
+<!--        {% for event in events %}-->
+<!--            <p class="events-list"><a><button class="del-event">Usuń wydarzenie</button></a></p>-->
+<!--        {% endfor %}-->
     </div>
 
     <hr>

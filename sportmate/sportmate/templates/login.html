@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %} {% load static %}
+
+{% block content %}
+    <div class="container" style="margin-top:30px">
+        <p>Nie masz jeszcze konta?
+            <a href="{% url 'signup'%}" target="blank"><strong>Zarejestruj się</strong></a>!
+        </p>
+    </div>
+{% endblock %}

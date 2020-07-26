@@ -38,7 +38,9 @@ class PanelView(View):
     def get(self, request):
 
         # return render(request, "panel.html")
-        return render(request, 'panel.html', {'event': self.event})
+        # import ipdb
+        # ipdb.set_trace()
+        return render(request, 'panel.html', {'events': self.event})
 
 
 class EventViewSet(viewsets.ModelViewSet):
@@ -56,5 +58,5 @@ class PostCreateView(CreateView):
 class AddEventView(CreateView):
     model = Event
     form_class = EventForm
-    success_url = "panel"
+    success_url = "/addevent"
     template_name = "addevent.html"

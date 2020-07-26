@@ -23,14 +23,13 @@
 
     <header>
         <div class="login-layout">
-            <h1><a href="../../">SMate</a></h1>
+            <h1><a href="/">SMate</a></h1>
         {% block main-header %}
         {% if not user.is_authenticated %}
 <!--        <h2>Login</h2>-->
             <div class="middle-login-group">
                 <form method="post" class="inline-form" role="form" action="{% url 'login' %}">
                   {% csrf_token %}
-                  {{ form.as_p }}
         <!--            <div class="form-group">-->
                       <input type="text" placeholder="username" class="form" name="username" autofocus="" required="" id="id_username">
         <!--            </div>-->
