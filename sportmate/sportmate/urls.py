@@ -20,18 +20,10 @@ from smate.views import AddEventView, PanelView, EventViewSet
 from . import views
 from rest_framework import routers
 
-# router = routers.DefaultRouter()
-# router.register('panel', EventViewSet)
-
 urlpatterns = [
-    # path('', include(router.urls)),
-    path('', views.home, name='home'),
-    # path('panel/', views.panel, name='panel'),
-    path('panel/', PanelView.as_view(), name='panel'),
-    path('addevent/', AddEventView.as_view(), name='addevent'),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    # path('surveys/', include('surveys.urls')),
-    # path('notifications', include('notifications.urls'))
+    path("", views.home, name="home"),
+    path("admin/", admin.site.urls),
+    path("panel/", PanelView.as_view(), name="panel"),
+    path("addevent/", AddEventView.as_view(), name="addevent"),
+    path("accounts/", include("accounts.urls")),
 ]
