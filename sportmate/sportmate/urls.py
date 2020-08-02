@@ -26,4 +26,5 @@ urlpatterns = [
     path("panel/", PanelView.as_view(), name="panel"),
     path("addevent/", AddEventView.as_view(), name="addevent"),
     path("accounts/", include("accounts.urls")),
+path("google_search/", views.google_search, name="google_search"),
 ]
