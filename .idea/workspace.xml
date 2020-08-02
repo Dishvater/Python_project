@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce1a3c34-c77f-4a33-b9b0-3619a4f073cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sportmate/sportmate/templates/map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/templates/core/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
