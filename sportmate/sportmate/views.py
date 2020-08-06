@@ -17,3 +17,6 @@ def add_event(request):
 def panel(request):
     return render(request, 'panel.html')
 
+
+def google_search(request):
+    return render(request, "map.html")
