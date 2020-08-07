@@ -6,7 +6,7 @@ from smate.models import Event
 
 def home(request):
     event = Event.objects.all()
-    return render(request, 'home.html', {'event': event})
+    return render(request, 'home.html', {'events': event})
 
 
 def add_event(request):

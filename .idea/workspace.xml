@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce1a3c34-c77f-4a33-b9b0-3619a4f073cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sportmate/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/smate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/smate/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/smate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/smate/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/static/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/static/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/templates/core/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/templates/panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/templates/panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportmate/sportmate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sportmate/sportmate/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +34,13 @@
   <component name="ProjectId" id="1eZQ3JFZzhBpvLUfU2xTkC9tInb" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/projekt/Python_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sportmate" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wwawr\pytpoz3-projekt\Python_project\sportmate" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projekt\Python_project\sportmate\sportmate\templates" />
       <recent name="C:\Users\wwawr\pytpoz3-projekt\Python_project\sportmate\sportmate\templates" />
