@@ -15,7 +15,7 @@ class Event(models.Model):
     when = models.DateTimeField(null=False, blank=False)
     minmaxcurrent = models.CharField(max_length=128)
     explevel = models.IntegerField(choices=LEVEL, default=1)
-    users = models.ManyToManyField(User, blank=True)
+    users = models.OneToOneField(User, blank=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.what

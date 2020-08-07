@@ -34,13 +34,14 @@ def Add_event(request):
 
 class PanelView(View):
 
-    event = Event.objects.all()
     def get(self, request):
+        userevent = Event.objects.filter(users=request.user)
+        event = Event.objects.all()
 
         # return render(request, "panel.html")
         # import ipdb
         # ipdb.set_trace()
-        return render(request, 'panel.html', {'events': self.event})
+        return render(request, 'panel.html', {'events': event, 'userevents': userevent})
 
 
 class EventViewSet(viewsets.ModelViewSet):

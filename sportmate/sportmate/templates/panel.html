@@ -9,44 +9,68 @@
 {% block content %}
     <hr>
     <div>
-        <a href="{% url 'addevent' %}"><button>Dodaj wydarzenie</button></a>
+        <a href="{% url 'addevent' %}"><button class="waves-effect waves-light btn">Dodaj wydarzenie</button></a>
 <!--        <a href="/addevent/"><button>Dodaj wydarzenie</button></a>-->
 <!--        <button onclick="location.href=/addevent/">Dodaj wydarzenie</button>-->
     </div>
     <div class="row">
         <p><h4>Moje wydarzenia:</h4></p>
     </div>
-    <div>
-        <p><h5> what | Where | When | Exp. level</h5></p>
-    </div>
+<!--    <div>-->
+<!--        <p><h5> what | Where | When | Exp. level</h5></p>-->
+<!--    </div>-->
     <div style="float: left;">
-            <div>
-            {% for event in events %}
-<!--            <p>{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }}</p>-->
-<!--                <tr>-->
-<!--                    <td>{{ event.what }}</td>-->
-<!--                    <td>{{ event.where }}</td>-->
-<!--                    <td>{{ event.when }}</td>-->
-<!--                    <td>{{ event.explevel }}</td>-->
-<!--                    <td><a><button class="del-event">Usuń wydarzenie</button></a></td>-->
-<!--                </tr>-->
-                <p class="events-list events-list-background">{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }} </p>
-            {% endfor %}
-            </div>
+        <table class="striped">
+            <thead>
+              <tr>
+                  <th>What</th>
+                  <th>Where</th>
+                  <th>When</th>
+                  <th>Exp. level</th>
+                  {% if user.is_authenticated %}<th></th>{% endif %}
+              </tr>
+            </thead>
+            <tbody>
+                {% for event in userevents %}
+                <tr>
+                    <td>{{ event.what }}</td>
+                    <td>{{ event.where }}</td>
+                    <td>{{ event.when }}</td>
+                    <td>{{ event.explevel }}</td>
+                    {% if user.is_authenticated %}<td style="background-color: white;"><a><button class="waves-effect waves-light btn">Zapisz się</button></a></td>{% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<!--            <div>-->
+<!--                <ul class="collection">-->
+<!--                    {% for event in userevents %}-->
+<!--        &lt;!&ndash;            <p>{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }}</p>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <tr>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <td>{{ event.what }}</td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <td>{{ event.where }}</td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <td>{{ event.when }}</td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <td>{{ event.explevel }}</td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <td><a><button class="del-event">Usuń wydarzenie</button></a></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </tr>&ndash;&gt;-->
+<!--                        <li  class="events-list events-list-background collection-item">{{ event.what }} | {{ event.where }} | {{ event.when }} | {{ event.explevel }} </li>-->
+<!--                    {% endfor %}-->
+<!--                </ul>-->
+<!--            </div>-->
     </div>
-    <div>
-        {% if user.is_authenticated %}
-            {% for event in event %}
-                <p class="events-list"><a><button class="sign-event">Zapisz się</button></a></p>
-            {% endfor %}
-        {% endif %}
-<!--        {% for event in events %}-->
-<!--            <p class="events-list"><a><button class="del-event">Usuń wydarzenie</button></a></p>-->
-<!--        {% endfor %}-->
-    </div>
+<!--    <div>-->
+<!--        {% if user.is_authenticated %}-->
+<!--            {% for event in events %}-->
+<!--                <p class="events-list"><a><button class="waves-effect waves-light btn">Zapisz się</button></a></p>-->
+<!--            {% endfor %}-->
+<!--        {% endif %}-->
+<!--&lt;!&ndash;        {% for event in events %}&ndash;&gt;-->
+<!--&lt;!&ndash;            <p class="events-list"><a><button class="del-event">Usuń wydarzenie</button></a></p>&ndash;&gt;-->
+<!--&lt;!&ndash;        {% endfor %}&ndash;&gt;-->
+<!--    </div>-->
 
     <hr>
-    <div class="row">
+    <div>
         <p><h4>wydarzenia zapisane:</h4></p>
     </div>
 {% endblock %}
