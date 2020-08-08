@@ -19,6 +19,14 @@
 <!--    <div>-->
 <!--        <p><h5> what | Where | When | Exp. level</h5></p>-->
 <!--    </div>-->
+    <div class="input-field col s12">
+        <select style="display: block;">
+          <option value="">Choose city</option>
+          {% for city in cities %}
+            <option value="{{ city.id }}">{{ city }}</option>
+          {% endfor %}
+        </select>
+    </div>
     <div style="float: left;">
         <table class="striped">
             <thead>

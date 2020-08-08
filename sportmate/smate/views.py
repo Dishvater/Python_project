@@ -5,7 +5,7 @@ from django.views import View
 from django.views.generic import CreateView
 
 from smate.forms import UserForm, EventForm
-from smate.models import User, Event
+from smate.models import User, Event, City
 from rest_framework import viewsets
 
 from smate.serializers import EventSerializer
@@ -37,11 +37,12 @@ class PanelView(View):
     def get(self, request):
         userevent = Event.objects.filter(users=request.user)
         event = Event.objects.all()
+        city = City.objects.all()
 
         # return render(request, "panel.html")
         # import ipdb
         # ipdb.set_trace()
-        return render(request, 'panel.html', {'events': event, 'userevents': userevent})
+        return render(request, 'panel.html', {'events': event, 'userevents': userevent, 'cities': city})
 
 
 class EventViewSet(viewsets.ModelViewSet):
