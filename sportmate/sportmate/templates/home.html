@@ -11,6 +11,14 @@
             <div class="row">
                 <p><h2>Aktualne wydarzenia:</h2></p>
             </div>
+            <div class="input-field col s12">
+                <select style="display: inline;">
+                  <option value="" disabled selected>Choose city</option>
+                  {% for city in cities %}
+                  <option value="1">{{ city }}</option>
+                  {% endfor %}
+                </select>
+            </div>
             <div>
                 <table class="striped">
                     <thead>

@@ -9,6 +9,9 @@ header a {
     color: black;
 }
 
+select {
+ display:block;
+}
 
 .footer {
   position: absolute;

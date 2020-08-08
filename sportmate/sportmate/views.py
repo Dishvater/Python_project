@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from smate.models import Event
+from smate.models import Event, City
 
 
 def home(request):
     event = Event.objects.all()
-    return render(request, 'home.html', {'events': event})
+    city = City.objects.all()
+    return render(request, 'home.html', {'events': event, 'cities': city})
 
 
 def add_event(request):
